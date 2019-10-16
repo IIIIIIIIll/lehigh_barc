@@ -1,0 +1,2 @@
+ros_maestro
+-DCATKIN_DEVEL_PREFIX=/home/yut/lehigh_barc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yut/lehigh_barc_ws/install -G Unix Makefiles

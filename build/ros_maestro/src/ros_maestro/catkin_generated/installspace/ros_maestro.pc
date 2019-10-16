@@ -1,0 +1,8 @@
+prefix=/home/yut/lehigh_barc_ws/install
+
+Name: ros_maestro
+Description: Description of ros_maestro
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/yut/lehigh_barc_ws/install/lib 
+Requires: 
