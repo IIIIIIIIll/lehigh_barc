@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import math
 import roslib
 import rospy
 
@@ -14,11 +15,15 @@ def translatorCB(msg):
     wheelSep = 0.13 * 2.54  #also in meters
     transVelocity = msg.linear.x    #actual speed in m.s
     rotVelocity = msg.angular.z     #radian
-    rotate_angle = rotVelocity*180/3.1415 / 45 #should be somewhere between 0 and 30 and need to figure out how a kinematic model work
+    stering_angle = math.atan2(rotVelocity,transVelocity)
+    rotate_angle = stering_angle*180/3.1415 / 45 #should be somewhere between 0 and 30 and need to figure out how a kinematic model work
+
     if transVelocity > 0.5:
         transVelocity = 0.5
     if rotate_angle > 1:
         rotate_angle = 1
+    if rotate_angle < -1:
+        rotate_angle = -1
     rkey = 1500+int(transVelocity*800)  
     skey = 1500+int(rotate_angle*800)
     ssend =str(skey) 
