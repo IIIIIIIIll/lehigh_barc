@@ -16,7 +16,7 @@ def translatorCB(msg):
     transVelocity = msg.linear.x    #actual speed in m.s
     rotVelocity = msg.angular.z     #radian
     stering_angle = math.atan2(rotVelocity,transVelocity)
-    rotate_angle = stering_angle*180/3.1415 / 45 #should be somewhere between 0 and 30 and need to figure out how a kinematic model work
+    rotate_angle = stering_angle*180/3.1415/45 #should be somewhere between 0 and 30 and need to figure out how a kinematic model work
 
     if transVelocity > 0.5:
         transVelocity = 0.5
