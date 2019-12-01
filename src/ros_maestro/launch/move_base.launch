@@ -1,9 +1,6 @@
-<!-- 
-    ROS navigation stack with velocity smoother and safety (reactive) controller
--->
 <launch>
 
-  <master auto="start">
+  <master auto="start"/>
   
   <arg name="odom_frame_id"   default="odom"/>
   <arg name="base_frame_id"   default="base_footprint"/>
@@ -22,7 +19,7 @@
     <rosparam file="$(find ros_maestro)/param/global_planner_params.yaml" command="load" />
     <rosparam file="$(find ros_maestro)/param/navfn_global_planner_params.yaml" command="load" />
     <!-- external params file that could be loaded into the move_base namespace -->
-    <rosparam file="$(arg custom_param_file)" command="load" />
+    <!-- <rosparam file="$(arg custom_param_file)" command="load" /> -->
     
     <!-- reset frame_id parameters using user input data -->
     <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>
@@ -34,4 +31,5 @@
     <remap from="odom" to="$(arg odom_topic)"/>
     <remap from="scan" to="$(arg laser_topic)"/>
   </node>
+
 </launch>
