@@ -144,5 +144,5 @@
       <remap from="scan" to="/scan"/>
       <param name="range_max" type="double" value="4"/>
     </node>
-  <node pkg="tf" type="static_transform_publisher" name="odom_camera_tf" args="0.11 0 0.16 0 0 0 1 /base_footprint /camera_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="odom_camera_tf" args="0.2 0 0.15 0 0 0 1 /base_footprint /camera_link 100" />
 </launch>
